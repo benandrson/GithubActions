@@ -29,7 +29,13 @@ namespace GithubActionsLab
             Assert.Throws<ArgumentNullException>(() => Program.Add(null, "1"));
             Assert.Throws<ArgumentNullException>(() => Program.Add(null, null));
         }
-
+        [Test]
+        public void Add_Negative()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Add("1", "-1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Add("-2","1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Add("-2", "-2"));
+        }
         // Implement 3 tests per operation, following a similar pattern as above
     }
 }
