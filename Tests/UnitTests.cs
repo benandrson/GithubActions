@@ -32,9 +32,9 @@ namespace GithubActionsLab
         [Test]
         public void Add_Negative()
         {
-            Assert.Throws<ArgumentNullException>(() => Program.Add("1", "-1"));
-            Assert.Throws<ArgumentNullException>(() => Program.Add("-2","1"));
-            Assert.Throws<ArgumentNullException>(() => Program.Add("-2", "-2"));
+            Assert.AreEqual(0, Program.Add("1", "-1"));
+            Assert.AreEqual(-2, Program.Add("-1", "-1"));
+            Assert.AreEqual(3, Program.Add("4", "-1"));
         }
         // Implement 3 tests per operation, following a similar pattern as above
     }
